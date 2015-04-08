@@ -1,0 +1,17 @@
+Package: dplyrOracle
+Version: 0.0.1
+Title: Connect R to Oracle using dplyr
+Authors@R: c(person("Tomas Greif", role = c("aut", "cre"),email = "greif.tomas@gmail.com"))
+Author: Tomas Greif [aut, cre]
+Maintainer: Tomas Greif <greif.tomas@gmail.com>
+Depends:
+    R (>= 3.1.1)
+Imports: 
+    utils,
+    dplyr, 
+    DBI (>= 0.3.1), 
+    ROracle, 
+    assertthat
+Description: Allows dplyr to work with oracle
+License: GPL
+URL: http://github.com/tomasgreif/dplyrOracle
