@@ -73,7 +73,7 @@ src_desc.src_oracle <- function(x) {
 }
 
 #' @export
-src_translate_env.src_oracle <- function(x) {
+sql_translate_env.src_oracle <- function(x) {
   sql_variant(
     base_scalar,
     sql_translator(.parent = base_agg,
