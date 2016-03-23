@@ -6,12 +6,13 @@ Author: Tomas Greif [aut, cre]
 Maintainer: Tomas Greif <greif.tomas@gmail.com>
 Depends:
     R (>= 3.1.1)
-Imports: 
+Imports:
     utils,
-    dplyr, 
-    DBI (>= 0.3.1), 
-    ROracle, 
+    dplyr,
+    DBI (>= 0.3.1),
+    ROracle,
     assertthat
 Description: Allows dplyr to work with oracle
 License: GPL
 URL: http://github.com/tomasgreif/dplyrOracle
+RoxygenNote: 5.0.1

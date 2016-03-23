@@ -73,7 +73,7 @@ src_desc.src_oracle <- function(x) {
 }
 
 #' @export
-src_translate_env.src_oracle <- function(x) {
+sql_translate_env.OraConnection <- function(x) {
   sql_variant(
     base_scalar,
     sql_translator(.parent = base_agg,
@@ -201,11 +201,26 @@ db_analyze.OraConnection <- function(con, table, ...) {
   return(TRUE)
 }
 
-#' @export
-sql_subquery.OraConnection <- function(con, sql, name = dplyr:::unique_name(), ...) {
-  if (is.ident(sql)) return(sql)
-  build_sql("(", sql, ") ", ident(name), con = con)
-}
+#' #' @export
+#' sql_subquery.OraConnection <- function(con, sql, name = dplyr:::unique_name(), ...) {
+#'  if (is.ident(sql)) return(sql)
+#'  build_sql("(", sql, ") ", ident(name), con = con)
+#' }
+
+#' #' @export
+#' sql_subquery.OraConnection <- function(con, from, name = unique_name(), ...) {
+#'   if (is.ident(from)) {
+#'     setNames(from, name)
+#'   } else {
+#'     if (is.null(name)) {
+#'       build_sql("(", from, ")", con = con)
+#'     } else {
+#'       build_sql("(", from, ") AS ", ident(name), con = con)
+#'     }
+#'   }
+#' }
+
+
 
 "%||%" <- function(x, y) if(is.null(x)) y else x
 
